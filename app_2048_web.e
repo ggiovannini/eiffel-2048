@@ -42,7 +42,7 @@ feature {NONE} -- Execution
 				is_attached := true
 				create controller.make
 					--TODO: Download the http://gabrielecirulli.github.io/2048/style/main.css and call locally
-				Result.set_body ("<link rel='stylesheet' type='text/css' href='http://gabrielecirulli.github.io/2048/style/main.css'>" + controller.board.out)
+				Result.set_body ("<link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + controller.board.out)
 			else
 				if attached req.string_item ("user") as l_user then
 					if l_user.is_equal ("w") then
@@ -72,7 +72,7 @@ feature {NONE} -- Execution
 						Result.add_javascript_content ("alert('YOU LOST!!!!!!!!!!!!!!')")
 					end
 						--TODO: Download the http://gabrielecirulli.github.io/2048/style/main.css and call locally
-					Result.set_body ("<link rel='stylesheet' type='text/css' href='http://gabrielecirulli.github.io/2048/style/main.css'>" + controller.board.out)
+					Result.set_body ("<link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + controller.board.out)
 				end
 			end
 
