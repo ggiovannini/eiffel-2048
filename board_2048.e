@@ -156,11 +156,11 @@ feature -- Status report
 				loop
 					if elements.item (i, j).value /= 0 then
 						output.append_string ("<div class='grid-cell'><div class='tile-container'><div class='tile tile-" + elements.item (i, j).out  + " tile-position-1-1'><div class='tile-inner'>")
-						output.append_string (elements.item (i, j).out)
+						--output.append_string (elements.item (i, j).out)
 						output.append_string ("</div></div></div></div>")
 					else
 						output.append_string ("<div class='grid-cell'>")
-						output.append_string (elements.item (i, j).out)
+						--output.append_string (elements.item (i, j).out)
 						output.append_string ("</div>")
 					end
 					j:=j+1
