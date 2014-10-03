@@ -174,6 +174,34 @@ feature -- Status report
 				Result.count>0
 		end
 
+		out2: STRING
+		local
+			i: INTEGER
+			j: INTEGER
+			output: STRING
+		do
+			output:=""
+			from
+				i:= 1
+			until
+				i> rows
+			loop
+				from
+					j:= 1
+				until
+					j>columns
+				loop
+					output.append_string ("|")
+					output.append_string (elements.item (i, j).out)
+					j:=j+1
+				end
+					output.append_string ("|")
+					output.append_string("%N")
+					i:=i+1
+			end
+			Result := output
+		end
+
 	is_full: BOOLEAN
 		-- Indicates if all cells in the board are set or not
 		do

@@ -30,6 +30,7 @@ feature -- Initialisation
 
 			coord_last_random_cell := [0, 0]
 			create board.make
+
 		ensure
 			board /= Void
 		end
@@ -45,7 +46,6 @@ feature -- Game State
 			-- Reference to the object that maintains the state of the game
 			-- and takes care of the games logic.
 
-	user: USER_2048
 
 	is_finished: BOOLEAN
 			-- Indicates whether the game is finished or not.
@@ -453,25 +453,6 @@ set_random_free_cell
 
 Feature
 
-	login (username: STRING; password: STRING)
-			-- validate the user datas
-			-- load the user from the file into the user variable, or void if the user doesn't exist
-		require
-			(create {USER_2048}.make_for_test).is_valid_nickname (username) and password /= Void
-		local
-			possible_user: USER_2048
-		do
-			create possible_user.make_with_nickname (username)
-			if possible_user.has_unfinished_game then
-				possible_user.load_game
-				if equal(password, possible_user.password) then
-					user := possible_user
-				else
-					user := Void
-				end
-			else
-				user := Void
-			end
-		end
+
 
 end
