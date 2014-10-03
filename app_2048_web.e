@@ -1,12 +1,6 @@
 note
 	description: "[
-						This class implements the `Hello World' service.
-		
-						It inherits from WSF_DEFAULT_RESPONSE_SERVICE to get default EWF connector ready
-						only `response' needs to be implemented.
-						In this example, it is redefined and specialized to be WSF_PAGE_RESPONSE
-		
-						`initialize' can be redefine to provide custom options if needed.
+						
 	]"
 
 class
@@ -45,7 +39,7 @@ feature
 			create possible_user.make_with_nickname (username)
 			if possible_user.has_unfinished_game then
 				possible_user.load_game
-				if equal(password, possible_user.password) then
+				if equal (password, possible_user.password) then
 					user := possible_user
 				else
 					user := Void
@@ -61,6 +55,7 @@ feature {NONE} -- Execution
 			-- Computed response message.
 
 		do
+
 				--  cont code:
 				-- 0: Login or Register
 				-- 1: Login
@@ -134,7 +129,6 @@ feature {NONE} -- Execution
 					if new_user.is_valid_name (name) and new_user.is_valid_name (surname) and new_user.is_valid_name (nick) and new_user.is_valid_password (pass) then --validate the data
 						if not new_user.existing_file (nick) then
 							create user.make_new_user (name, surname, nick, pass)
-
 							cont := 3
 						else
 							Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "[
@@ -222,9 +216,13 @@ feature {NONE} -- Execution
 						end
 						if controller.board.is_winning_board then
 							CONT := 7
+							controller.make
+							user.save_game (controller.board)
 						end
 						if not controller.board.can_move_up and not controller.board.can_move_down and not controller.board.can_move_left and not controller.board.can_move_right then
 							cont := 6
+							controller.make
+							user.save_game (controller.board)
 						end
 							--TODO: Download the http://gabrielecirulli.github.io/2048/style/main.css and call locally
 						Result.set_body ("<link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + controller.board.out + "<br><br><div align='center' > <form action='/' method='POST'> <input type='submit' name='q' value='Quit'/> <input type='submit' name='saq' value='Save and Quit'/> </form></div>")
@@ -251,12 +249,25 @@ feature {NONE} -- Execution
 				Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a> QUIT <a>")
 			end
 			if cont = 5 then
-
-					Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a> SAVE AND QUIT <a>")
-			
+				Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a> SAVE AND QUIT <a>")
 			end
 			if cont = 6 then
 				Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a> GAME OVER<a>")
+					--	if attached req.string_item ("newg") as new then
+
+					--create controller.make
+					--is_attached := false
+					--		cont := 3
+					--		io.put_string ("AAAAAAAAA")
+					--	else
+					--		Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a> GAME OVER<a>" + "[
+					--		<form action="/" method="POST">
+					--				<br>
+					--				<br>
+					--			<input type="submit" name="newg" value="New game"/>
+					--		</form>
+					--		]" + "</div>")
+					--end
 			end
 			if cont = 7 then
 				Result.set_body ("<div align='center' ><link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + "<a>CONGRATULATIONS! YOU WIN THE GAMEe<a>")
