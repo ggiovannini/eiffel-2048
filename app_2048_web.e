@@ -100,7 +100,7 @@ feature {NONE} -- Execution
 								<p>Insert your nickname</p>
 								<input type="text" name="nickname"/>
 								<p>Insert your password</p>
-								<input type="text" name="password"/>
+								<input type="password" name="password"/>
 								<br>
 								<input type="submit" value="Login"/>
 							</form>
@@ -115,7 +115,7 @@ feature {NONE} -- Execution
 							<p>Insert your nickname</p>
 							<input type="text" name="nickname"/>
 							<p>Insert your password</p>
-							<input type="text" name="password"/>
+							<input type="password" name="password"/>
 							<br>
 							<input type="submit" value="Login"/>
 						</form>
@@ -143,7 +143,7 @@ feature {NONE} -- Execution
 									<p>Insert your nickname</p>
 									<input type="text" name="nickname"/>
 									<p>Insert your password</p>
-									<input type="text" name="password"/>
+									<input type="password" name="password"/>
 									<br>
 									<input type="submit" value="Register"/>
 								</form>
@@ -162,7 +162,7 @@ feature {NONE} -- Execution
 								<p>Insert your nickname</p>
 								<input type="text" name="nickname"/>
 								<p>Insert your password</p>
-								<input type="text" name="password"/>
+								<input type="password" name="password"/>
 								<br>
 								<input type="submit" value="Register"/>
 							</form>
@@ -178,7 +178,7 @@ feature {NONE} -- Execution
 							<p>Insert your nickname</p>
 							<input type="text" name="nickname"/>
 							<p>Insert your password</p>
-							<input type="text" name="password"/>
+							<input type="password" name="password"/>
 							<br>
 							<input type="submit" value="Register"/>
 						</form>
