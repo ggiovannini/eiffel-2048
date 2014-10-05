@@ -2,13 +2,12 @@ note
 	description: "[
 		Tests for "is_valid_value" feature at "CELL_2048" class.
 	]"
-	author: "Jheredia"
-	date: "August 26, 2014"
-	revision: "0.02"
-	testing: "type/manual"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	IS_VALID_VALUE_AT_CELL_2048
+	IS_VALID_VALUE_AT_CELL_PRISM
 
 inherit
 
