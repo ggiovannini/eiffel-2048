@@ -2,13 +2,12 @@ note
 	description: "[
 		Test for the is_full routine of class BOARD_2048.
 	]"
-	author: "Angelo Chaves"
-	date: "August 28, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
-	testing: "type/manual"
 
 class
-	IS_FULL_AT_BOARD_2048
+	IS_FULL_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET

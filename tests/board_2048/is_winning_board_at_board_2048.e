@@ -2,13 +2,12 @@ note
 	description: "[
 		Tests for the method is_winning_board of class BOARD_2048
 	]"
-	author: "facumolina"
-	date: "$August 28, 2014$"
-	revision: "$0.01$"
-	testing: "type/manual"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	IS_WINNING_BOARD_AT_BOARD_2048
+	IS_WINNING_BOARD_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET
