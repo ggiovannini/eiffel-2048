@@ -1,12 +1,11 @@
 note
 	description: "Test class for LEFT_AT_CONTROLLER_2048 class"
-	author: "Max Cejuela, Bruno Isoardi and Guido Giovannini"
-	date: "September 9, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
-	testing: "type/manual"
 
 class
-	LEFT_AT_CONTROLLER_2048
+	LEFT_AT_CONTROLLER_PRISM
 
 inherit
 

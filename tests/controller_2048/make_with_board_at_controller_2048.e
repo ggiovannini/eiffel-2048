@@ -2,15 +2,15 @@ note
 	description: "[
 		Test of the make_with_board constructor in class CONTROLLER_2048.
 	]"
-	author: "Angelo Chaves"
-	date: "2014-08-26"
-	revision: "0.1"
-	testing: "type/manual"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	MAKE_WITH_BOARD_AT_CONTROLLER_2048
+	MAKE_WITH_BOARD_AT_CONTROLLER_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
@@ -27,5 +27,3 @@ feature -- Test routines
 		end
 
 end
-
-

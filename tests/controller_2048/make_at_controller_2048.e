@@ -1,11 +1,11 @@
 note
 	description: "Test of the make constructor in class CONTROLLER_2048."
 	author: "ggiovannini"
-	date: "August 26, 2014"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	MAKE_AT_CONTROLLER_2048
+	MAKE_AT_CONTROLLER_PRISM
 
 inherit
 

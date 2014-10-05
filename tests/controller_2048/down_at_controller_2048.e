@@ -1,13 +1,14 @@
 note
 	description: "Tests for 'down' feature in CONTROLLER_2048."
-	author: "Max Cejuela"
-	date: "September 2, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	DOWN_AT_CONTROLLER_2048
+	DOWN_AT_CONTROLLER_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
@@ -33,33 +34,28 @@ feature -- Test routines
 		do
 			create board.make_empty
 			create controller.make_with_board (board)
-
 			controller.board.set_cell (1, 1, 2)
 			controller.board.set_cell (2, 1, 2)
 			controller.board.set_cell (3, 1, 16)
 			controller.board.set_cell (4, 1, 16)
-
 			controller.board.set_cell (1, 2, 8)
 			controller.board.set_cell (2, 2, 8)
 			controller.board.set_cell (3, 2, 8)
 			controller.board.set_cell (4, 2, 4)
-
 			controller.board.set_cell (1, 3, 8)
 			controller.board.set_cell (2, 3, 4)
 			controller.board.set_cell (3, 3, 4)
 			controller.board.set_cell (4, 3, 8)
-
 			controller.down
-
-			assert ("[3,1] has a 4", controller.board.elements.item(3,1).value=4)
-			assert ("[4,1] has a 32", controller.board.elements.item(4,1).value=32)
-			assert ("[2,2] has an 8", controller.board.elements.item(2,2).value=8)
-			assert ("[3,2] has a 16", controller.board.elements.item(3,2).value=16)
-			assert ("[4,2] has a 4", controller.board.elements.item(4,2).value=4)
-			assert ("[2,3] has an 8", controller.board.elements.item(2,3).value=8)
-			assert ("[3,3] has an 8", controller.board.elements.item(3,3).value=8)
-			assert ("[4,3] has an 8", controller.board.elements.item(4,3).value=8)
-			assert ("board has 9 filled cells", controller.board.nr_of_filled_cells=9)
+			assert ("[3,1] has a 4", controller.board.elements.item (3, 1).value = 4)
+			assert ("[4,1] has a 32", controller.board.elements.item (4, 1).value = 32)
+			assert ("[2,2] has an 8", controller.board.elements.item (2, 2).value = 8)
+			assert ("[3,2] has a 16", controller.board.elements.item (3, 2).value = 16)
+			assert ("[4,2] has a 4", controller.board.elements.item (4, 2).value = 4)
+			assert ("[2,3] has an 8", controller.board.elements.item (2, 3).value = 8)
+			assert ("[3,3] has an 8", controller.board.elements.item (3, 3).value = 8)
+			assert ("[4,3] has an 8", controller.board.elements.item (4, 3).value = 8)
+			assert ("board has 9 filled cells", controller.board.nr_of_filled_cells = 9)
 		end
 
 	move_down_colapsing_cells_with_different_values
@@ -81,16 +77,13 @@ feature -- Test routines
 			controller: CONTROLLER_2048
 		do
 			create board.make_empty
-			create controller.make_with_board(board)
-
+			create controller.make_with_board (board)
 			controller.board.set_cell (2, 4, 2)
 			controller.board.set_cell (3, 4, 4)
-
 			controller.down
-
-			assert ("[3,4] has a 2", controller.board.elements.item(3,4).value=2)
-			assert ("[4,4] has a 4", controller.board.elements.item(4,4).value=4)
-			assert ("board has 3 filled cells", controller.board.nr_of_filled_cells=3)
+			assert ("[3,4] has a 2", controller.board.elements.item (3, 4).value = 2)
+			assert ("[4,4] has a 4", controller.board.elements.item (4, 4).value = 4)
+			assert ("board has 3 filled cells", controller.board.nr_of_filled_cells = 3)
 		end
 
 	move_down_colapsing_cells_with_same_values
@@ -112,15 +105,12 @@ feature -- Test routines
 			controller: CONTROLLER_2048
 		do
 			create board.make_empty
-			create controller.make_with_board(board)
-
+			create controller.make_with_board (board)
 			controller.board.set_cell (3, 4, 2)
 			controller.board.set_cell (4, 4, 2)
-
 			controller.down
-
-			assert ("[4,4] has a 4", controller.board.elements.item(4,4).value=4)
-			assert ("board has 2 filled cells", controller.board.nr_of_filled_cells=2)
+			assert ("[4,4] has a 4", controller.board.elements.item (4, 4).value = 4)
+			assert ("board has 2 filled cells", controller.board.nr_of_filled_cells = 2)
 		end
 
 	move_down_movement_of_cells
@@ -143,16 +133,13 @@ feature -- Test routines
 			controller: CONTROLLER_2048
 		do
 			create board.make_empty
-			create controller.make_with_board(board)
-
-			board.set_cell(2,1,2)
-			board.set_cell(3,2,2)
-
+			create controller.make_with_board (board)
+			board.set_cell (2, 1, 2)
+			board.set_cell (3, 2, 2)
 			controller.down
-
-			assert ("[4,1] has a 2", controller.board.elements[4,1].value=2)
-			assert ("[4,2] has a 2", controller.board.elements[4,2].value=2)
-			assert ("board has 3 filled cells", controller.board.nr_of_filled_cells=3)
+			assert ("[4,1] has a 2", controller.board.elements [4, 1].value = 2)
+			assert ("[4,2] has a 2", controller.board.elements [4, 2].value = 2)
+			assert ("board has 3 filled cells", controller.board.nr_of_filled_cells = 3)
 		end
 
 	move_down_error
@@ -170,33 +157,34 @@ feature -- Test routines
 			failed, second_time: BOOLEAN
 		do
 			if not second_time then
-          		failed := True
+				failed := True
 				create board.make_empty
-				create controller.make_with_board(board)
-				controller.board.set_cell(1, 1, 32)
-				controller.board.set_cell(2, 1, 128)
-				controller.board.set_cell(3, 1, 16)
-				controller.board.set_cell(4, 1, 64)
-				controller.board.set_cell(1, 2, 16)
-				controller.board.set_cell(2, 2, 64)
-				controller.board.set_cell(3, 2, 32)
-				controller.board.set_cell(4, 2, 128)
-				controller.board.set_cell(1, 3, 32)
-				controller.board.set_cell(2, 3, 128)
-				controller.board.set_cell(3, 3, 16)
-				controller.board.set_cell(4, 3, 64)
-				controller.board.set_cell(1, 4, 16)
-				controller.board.set_cell(2, 4, 64)
-				controller.board.set_cell(3, 4, 32)
-				controller.board.set_cell(4, 4, 128)
+				create controller.make_with_board (board)
+				controller.board.set_cell (1, 1, 32)
+				controller.board.set_cell (2, 1, 128)
+				controller.board.set_cell (3, 1, 16)
+				controller.board.set_cell (4, 1, 64)
+				controller.board.set_cell (1, 2, 16)
+				controller.board.set_cell (2, 2, 64)
+				controller.board.set_cell (3, 2, 32)
+				controller.board.set_cell (4, 2, 128)
+				controller.board.set_cell (1, 3, 32)
+				controller.board.set_cell (2, 3, 128)
+				controller.board.set_cell (3, 3, 16)
+				controller.board.set_cell (4, 3, 64)
+				controller.board.set_cell (1, 4, 16)
+				controller.board.set_cell (2, 4, 64)
+				controller.board.set_cell (3, 4, 32)
+				controller.board.set_cell (4, 4, 128)
 				controller.down -- Must throw an exception
 				failed := False
 			end
-    		assert ("The rutine has to fail", failed)
-			rescue
-     			second_time := True
-     			if failed then   -- failed = true means that the rutine failed
-           			retry
-    			end
+			assert ("The rutine has to fail", failed)
+		rescue
+			second_time := True
+			if failed then -- failed = true means that the rutine failed
+				retry
+			end
 		end --end do
+
 end

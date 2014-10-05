@@ -1,30 +1,32 @@
 note
 	description: "Test of 'up' in class CONTROLLER_2048."
-	author: "jjaimez"
-	date: "August 27, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
+
 class
-	UP_AT_CONTROLLER_2048
+	UP_AT_CONTROLLER_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
-	feature -- Test routines
+feature -- Test routines
 
-		test_up_with_cant_move_up
-				-- Scenario: can't move up, pre condition is violated.
-				-- Given the game board is in state, when I move up the funtion throw an error.
-				--  2 |	2 | 2 | 2
-				--	4 | 4 | 4 | 4
-				--	2 | 2 | 2 | 2
-				--	4 | 4 | 4 | 4	
+	test_up_with_cant_move_up
+			-- Scenario: can't move up, pre condition is violated.
+			-- Given the game board is in state, when I move up the funtion throw an error.
+			--  2 |	2 | 2 | 2
+			--	4 | 4 | 4 | 4
+			--	2 | 2 | 2 | 2
+			--	4 | 4 | 4 | 4
 		local
 			controller: CONTROLLER_2048
 			board: BOARD_2048
 			ok, second_time: BOOLEAN
 		do
 			if not second_time then
-          		ok := True
+				ok := True
 				create board.make
 				create controller.make_with_board (board)
 				controller.board.set_cell (1, 1, 2)
@@ -46,12 +48,12 @@ inherit
 				controller.up -- Must throw an exception
 				ok := False
 			end
-    		assert ("The rutine has to fail", ok)
-			rescue
-     			second_time := True
-     			if ok then   -- ok = true means that the rutine failed
-           			retry
-    			end
+			assert ("The rutine has to fail", ok)
+		rescue
+			second_time := True
+			if ok then -- ok = true means that the rutine failed
+				retry
+			end
 		end
 
 	test_up_with_can_move_up_with_colapses
@@ -123,14 +125,14 @@ inherit
 			--  2 | 2 | 2 | 2
 			--	0 | 0 | 0 | 0
 			--	0 | 0 | 0 | 0
-			--	0 | 0 | 0 | 0		
+			--	0 | 0 | 0 | 0
 		local
 			controller: CONTROLLER_2048
 			board: BOARD_2048
 			ok, second_time: BOOLEAN
 		do
 			if not second_time then
-		   		ok := True
+				ok := True
 				create board.make_empty
 				create controller.make_with_board (board)
 				controller.board.set_cell (1, 1, 2)
@@ -140,11 +142,12 @@ inherit
 				controller.up -- Must throw an exception
 				ok := False
 			end
-		    assert ("The rutine has to fail", ok)
-			rescue
-		    	second_time := True
-		     	if ok then   -- ok = true means that the rutine failed
-		        	retry
-		    	end
+			assert ("The rutine has to fail", ok)
+		rescue
+			second_time := True
+			if ok then -- ok = true means that the rutine failed
+				retry
+			end
 		end
+
 end

@@ -1,11 +1,11 @@
 ﻿note
 	description: "Summary description for {RIGHT_AT_CONTROLLER_2048}."
-	author: "ngomez"
-	date: "September 1, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	RIGHT_AT_CONTROLLER_2048
+	RIGHT_AT_CONTROLLER_PRISM
 
 inherit
 
