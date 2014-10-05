@@ -8,41 +8,41 @@ class
 	CAN_MOVE_LEFT_AT_BOARD_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
 
 	can_move_left_test_empty_cell
-		--Test when a cell has an empty cell to the left
+			--Test when a cell has an empty cell to the left
 		local
-			board:BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make_empty
-			board.set_cell(2,2,2)
-			board.set_cell(1,2,2) --just to maintain class invariant
+			board.set_cell (2, 2, 2)
+			board.set_cell (1, 2, 2) --just to maintain class invariant
 			assert ("Can move left", board.can_move_left)
 		end
 
 	can_move_left_test_cell_with_same_value
-		--Test when a cell has a cell to the left with the same value
+			--Test when a cell has a cell to the left with the same value
 		local
-			board:BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make_empty
-			board.set_cell(2,2,4)
-			board.set_cell(2,1,4)
+			board.set_cell (2, 2, 4)
+			board.set_cell (2, 1, 4)
 			assert ("Can move left", board.can_move_left)
 		end
 
 	can_not_move_left_test
-		--Test when a cell has a cell to the left with different value
+			--Test when a cell has a cell to the left with different value
 		local
-			board:BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make_empty
-			board.set_cell(2,2,4)
-			board.set_cell(2,1,2)
-
+			board.set_cell (2, 2, 4)
+			board.set_cell (2, 1, 2)
 			assert ("Can not move left", not board.can_move_left)
 		end
 
@@ -64,4 +64,5 @@ feature -- Test routines
 				retry
 			end
 		end
+
 end

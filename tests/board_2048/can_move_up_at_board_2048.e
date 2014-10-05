@@ -28,80 +28,81 @@ feature -- Positive Tests
 			-- This test should return False
 		local
 			board: BOARD_2048
-			i,j,k: INTEGER
+			i, j, k: INTEGER
 		do
 			create board.make_empty
 			from
 				j := 1
 			until
 				j > board.columns
+			loop
+				k := 2
+				from
+					i := board.rows
+				until
+					i < 1
 				loop
-					k := 2
-					from
-						i := board.rows
-					until
-						i < 1
-					loop
-						board.set_cell (i, j, k)
-						i := i - 1
-						k := k*2
-					end
-					j := j + 1
+					board.set_cell (i, j, k)
+					i := i - 1
+					k := k * 2
 				end
+				j := j + 1
+			end
 			assert ("You can't move up, the board is full.", not board.can_move_up)
 		end
 
-		can_move_up_test_with_full_board_and_have_moves
-				-- Test this method with full board and same values in the rows
-				-- This test should return True
-			local
-				board: BOARD_2048
-				i,j: INTEGER
-			do
-				create board.make_empty
+	can_move_up_test_with_full_board_and_have_moves
+			-- Test this method with full board and same values in the rows
+			-- This test should return True
+		local
+			board: BOARD_2048
+			i, j: INTEGER
+		do
+			create board.make_empty
+			from
+				j := 1
+			until
+				j > board.columns
+			loop
 				from
-					j := 1
+					i := board.rows - 1
 				until
-					j > board.columns
-					loop
-						from
-							i := board.rows -1
-						until
-							i < 1
-						loop
-							board.set_cell (i, j, 2)
-							i := i - 1
-						end
-						j := j + 1
-					end
-				assert ("You can move up, even if the board is full.", board.can_move_up)
+					i < 1
+				loop
+					board.set_cell (i, j, 2)
+					i := i - 1
+				end
+				j := j + 1
 			end
+			assert ("You can move up, even if the board is full.", board.can_move_up)
+		end
 
-		can_move_up_test_with_all_cells_up_in_the_board
-				-- Test this method with all cells up in the board
-				-- This test should return False
-			local
-				board: BOARD_2048
-				i,j,k: INTEGER
-			do
-				create board.make_empty
+	can_move_up_test_with_all_cells_up_in_the_board
+			-- Test this method with all cells up in the board
+			-- This test should return False
+		local
+			board: BOARD_2048
+			i, j, k: INTEGER
+		do
+			create board.make_empty
+			from
+				j := 1
+			until
+				j > board.columns
+			loop
 				from
-					j := 1
+					k := 2
+					i := 1
 				until
-					j > board.columns
-					loop
-						from
-							k := 2
-							i := 1
-						until
-							i > board.rows -1
-						loop
-							board.set_cell (i, j, k)
-							i := i + 1
-							k := k*2
-						end
-						j := j + 1
-					end
-				assert ("You can't move up, all cells is up.", not board.can_move_up)
+					i > board.rows - 1
+				loop
+					board.set_cell (i, j, k)
+					i := i + 1
+					k := k * 2
+				end
+				j := j + 1
 			end
+			assert ("You can't move up, all cells is up.", not board.can_move_up)
+		end
+
 end

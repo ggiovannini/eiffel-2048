@@ -8,11 +8,10 @@ class
 	OUT_AT_BOARD_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
-
 feature -- Rutine is_power_of_two at CELL_2048 class tests
-
 
 	string_has_even_amount_of_numbers
 			-- String out lenght must be even
@@ -21,7 +20,7 @@ feature -- Rutine is_power_of_two at CELL_2048 class tests
 			board: BOARD_2048
 		do
 			create board.make_empty
-			assert ("String has even characters", board.out.count\\2=0)
+			assert ("String has even characters", board.out.count \\ 2 = 0)
 		end
 
 	string_is_not_empty
@@ -31,9 +30,7 @@ feature -- Rutine is_power_of_two at CELL_2048 class tests
 			board: BOARD_2048
 		do
 			create board.make_empty
-			assert ("String is not empty", board.out.count/=0)
+			assert ("String is not empty", board.out.count /= 0)
 		end
-
-
 
 end

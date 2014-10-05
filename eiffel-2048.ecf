@@ -26,6 +26,7 @@
 				<tests name="cell_2048" location=".\tests\cell_2048\"/>
 				<tests name="board_2048" location=".\tests\board_2048\"/>
 				<tests name="app_2048" location=".\tests\app_2048\"/>
+				<cluster name="user_prism" location="C:\Users\Guido\Desktop\prism\tests\user_prism\"/>
 			</cluster>
 		</cluster>
 	</target>

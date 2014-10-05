@@ -10,6 +10,7 @@ class
 	IS_WINNING_BOARD_AT_BOARD_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
@@ -17,7 +18,7 @@ feature -- Test routines
 	is_winning_board_on_initial_board_test
 			-- Test for empty board
 		local
-			board : BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make
 			assert ("An empty board is not a winning board", not board.is_winning_board)
@@ -30,12 +31,12 @@ feature -- Test routines
 			--                        |  |  |  |  |
 			--                        |  |  |  |  |
 		local
-			board : BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make_empty
-			board.set_cell (1,1,4)
-			board.set_cell (1,2,8)
-			board.set_cell (2,1,2)
+			board.set_cell (1, 1, 4)
+			board.set_cell (1, 2, 8)
+			board.set_cell (2, 1, 2)
 			assert ("The board is not a winning board", not board.is_winning_board)
 		end
 
@@ -46,17 +47,15 @@ feature -- Test routines
 			--                        |    |    |    |   4|
 			--                        |  32| 256|1024|2048|
 		local
-			board : BOARD_2048
+			board: BOARD_2048
 		do
 			create board.make_empty
-			board.set_cell (3,4,4)
-			board.set_cell (4,1,32)
-			board.set_cell (4,2,256)
-			board.set_cell (4,3,1024)
-			board.set_cell (4,4,2048)
+			board.set_cell (3, 4, 4)
+			board.set_cell (4, 1, 32)
+			board.set_cell (4, 2, 256)
+			board.set_cell (4, 3, 1024)
+			board.set_cell (4, 4, 2048)
 			assert ("The board is a winning board", board.is_winning_board)
 		end
 
 end
-
-

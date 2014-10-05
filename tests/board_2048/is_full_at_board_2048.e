@@ -10,6 +10,7 @@ class
 	IS_FULL_AT_BOARD_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
@@ -18,10 +19,10 @@ feature -- Test routines
 			-- Test with a full board
 		local
 			board: BOARD_2048
-			i,j: INTEGER
+			i, j: INTEGER
 		do
 			create board.make
-			from 		-- Fill the board with cells
+			from -- Fill the board with cells
 				j := 1
 			until
 				j > board.rows
@@ -49,5 +50,3 @@ feature -- Test routines
 		end
 
 end
-
-

@@ -5,10 +5,12 @@ note
 	author: "ggiovannini"
 	date: "October 5, 2014"
 	revision: "0.01"
+
 class
 	NR_OF_FILLED_CELLS_AT_BOARD_PRISM
 
 inherit
+
 	EQA_TEST_SET
 
 feature -- Test routines
@@ -52,5 +54,3 @@ feature -- Test routines
 		end
 
 end
-
-
