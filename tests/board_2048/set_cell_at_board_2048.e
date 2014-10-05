@@ -2,13 +2,12 @@ note
 	description: "[
 		Eiffel tests that can be executed by testing tool.
 	]"
-	author: "EiffelStudio test wizard"
-	date: "$Date$"
-	revision: "$Revision$"
-	testing: "type/manual"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	SET_CELL_AT_BOARD_2048
+	SET_CELL_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET
@@ -138,7 +137,7 @@ feature -- Test routines
 
 	set_cell_with_column_index_out_of_range
 			--set_cell testing with index out of range. It should break precondition
-			
+
 		local
 			ok, second_time: BOOLEAN
 			board : BOARD_2048

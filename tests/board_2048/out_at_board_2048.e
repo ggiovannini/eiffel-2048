@@ -1,11 +1,11 @@
 note
 	description: "Summary description for {OUT_AT_BOARD_2048}."
-	author: "javieriocejo"
-	date: "August 27, 2014"
-	revision: "00.1"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	OUT_AT_BOARD_2048
+	OUT_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET
@@ -34,16 +34,6 @@ feature -- Rutine is_power_of_two at CELL_2048 class tests
 			assert ("String is not empty", board.out.count/=0)
 		end
 
-	string_has_2_or_4
-			-- Board.out shall contain either two 2, two 4 or one each.
-			-- Must return TRUE
-		local
-			board: BOARD_2048
-			res: INTEGER
-		do
-			create board.make
-			res := board.out.occurrences ('2')+board.out.occurrences ('4')
-			assert ("Board.out contains either two 2, two 4 or a 2 and a 4", res = 2)
-		end
+
 
 end
