@@ -1,14 +1,13 @@
 note
 	description: "[
-		Test class for routine make at BOARD_2048 
+		Test class for routine make at BOARD_2048
 	]"
-	author: "Facundo Munoz"
-	date: "30/08/2013"
-	revision: "1.0"
-	testing: "type/manual"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	MAKE_AT_BOARD_2048
+	MAKE_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET

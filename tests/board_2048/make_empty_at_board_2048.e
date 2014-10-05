@@ -1,14 +1,14 @@
 note
 	description: "Test class for routine make_empty at BOARD_2048."
-	author: "jpadula"
-	date: "August 28, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	MAKE_EMPTY_AT_BOARD_2048
+	MAKE_EMPTY_AT_BOARD_PRISM
 
 inherit
-	--EQA_TEST_SET
+	EQA_TEST_SET
 
 feature
 
