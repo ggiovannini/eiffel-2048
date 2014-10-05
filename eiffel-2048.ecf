@@ -23,8 +23,8 @@
 			<tests name="acceptance_tests" location=".\acceptance_tests\"/>
 			<cluster name="tests" location=".\tests\">
 				<tests name="controller_2048" location=".\tests\controller_2048\"/>
-				<tests name="cell_2048" location=".\tests\cell_2048\"/>
-				<tests name="board_2048" location=".\tests\board_2048\"/>
+				<tests name="cell_prism" location=".\tests\cell_2048\"/>
+				<tests name="board_prism" location=".\tests\board_2048\"/>
 				<tests name="app_2048" location=".\tests\app_2048\"/>
 				<cluster name="user_prism" location="C:\Users\Guido\Desktop\prism\tests\user_prism\"/>
 			</cluster>
