@@ -1,6 +1,6 @@
 note
 	description: "[
-						
+
 	]"
 
 class
@@ -225,7 +225,7 @@ feature {NONE} -- Execution
 							user.save_game (controller.board)
 						end
 							--TODO: Download the http://gabrielecirulli.github.io/2048/style/main.css and call locally
-						Result.set_body ("<link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'>" + controller.board.out + "<br><br><div align='center' > <form action='/' method='POST'> <input type='submit' name='q' value='Quit'/> <input type='submit' name='saq' value='Save and Quit'/> </form></div>")
+						Result.set_body ("<link rel='stylesheet' type='text/css' href='https://d6945afcf8ed7ae0f49064a6a2455cbc47151266.googledrive.com/host/0B-xNCeUqs--aLW9HRTZiNWpDdUU/main.css'> "+ controller.board.out + "<br><br><div align='center' > <form action='/' method='POST'> <input type='submit' name='q' value='Quit'/> <input type='submit' name='saq' value='Save and Quit'/> </form></div>")
 					end
 					if attached req.string_item ("q") as quit then
 						cont := 4

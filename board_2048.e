@@ -142,7 +142,7 @@ feature -- Status report
 			j: INTEGER
 			output: STRING
 		do
-			output := "	<div id = 'board' class='game-container' style='margin-left: 430px;margin-top: -80px;'><div class='grid-container'>"
+			output :=  color_sate + "<div id = 'board' class='game-container' style='margin-left: 430px;margin-top: -80px;'><div class='grid-container'>"
 			from
 				i:= 1
 			until
@@ -427,4 +427,82 @@ feature {NONE} -- Auxiliary routines
 			Result < ceil
 		end
 
+	maximum_tile: INTEGER
+		-- Finds the tile with the maximum value on the current board state
+		local
+			i, j, max_tile: INTEGER
+		do
+			max_tile := 2
+			from
+				i := 1
+			until
+				i > 4
+			loop
+				from
+					j := 1
+				until
+					j > 4
+				loop
+					if elements.item (i, j).value /= 0 and elements.item(i, j).value > max_tile then
+						max_tile := elements.item (i, j).value
+					end
+					j := j + 1
+				end
+				i := i + 1
+			end
+			Result := max_tile
+		end
+
+	color_sate : STRING
+		-- Manages the highest color range reached at the moment during the game
+		local
+			message: STRING
+		do
+			message := "&nbsp <b>Game State:<b>&nbsp"
+			if maximum_tile = 2 then
+				message.append ("<font color=#BBB><b>'A long way to go...'<b></font>")
+			end
+
+			if maximum_tile = 4 then
+				message.append ("<font color=#78C5D5><b>'Ok, that was easy...'<b></font>")
+			end
+
+			if maximum_tile = 8 then
+				message.append ("<font color=#459BA8><b>'Already got it?'<b></font>")
+			end
+
+			if maximum_tile = 16 then
+				message.append ("<font color=#79C268><b>'Yeah, you got it!'<b></font>")
+			end
+
+			if maximum_tile = 32 then
+				message.append ("<font color=#C5D747><b>'It's simple, don't you think so?'<b></font>")
+			end
+
+			if maximum_tile = 64 then
+				message.append ("<font color=#F5D63D><b>'You didn't see anything yet... '<b></font>")
+			end
+
+			if maximum_tile = 128 then
+				message.append ("<font color=#F18C32><b>'Good, but be careful...'<b></font>")
+			end
+
+			if maximum_tile = 256 then
+				message.append ("<font color=#E868A1><b>'It's not that simple now, right?'<b></font>")
+			end
+
+			if maximum_tile = 512 then
+				message.append ("<font color=#BF63A6><b>'Finally we've got somehing!'<b></font>")
+			end
+
+			if maximum_tile = 1024 then
+				message.append ("<font color=#4B5320><b>'C'mon! One more!'<b></font>")
+			end
+
+			if maximum_tile = 2048 then
+				message.append ("<font color=#000><b>'I'm proud of you. You did it!!!'<b></font>")
+			end
+
+			Result := message
+		end
 end
