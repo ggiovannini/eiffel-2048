@@ -1,11 +1,11 @@
 note
 	description: "Test class for routine can_move_left at BOARD_2048"
-	author: "agusbauer"
-	date: "August 30, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	CAN_MOVE_LEFT_AT_BOARD_2048
+	CAN_MOVE_LEFT_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET

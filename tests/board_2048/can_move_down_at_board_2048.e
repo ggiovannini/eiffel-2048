@@ -1,11 +1,11 @@
 note
 	description: "Tests for can_move_down routine at BOARD_2048."
-	author: "lputruele"
-	date: "August 31, 2014"
+	author: "ggiovannini"
+	date: "October 5, 2014"
 	revision: "0.01"
 
 class
-	CAN_MOVE_DOWN_AT_BOARD_2048
+	CAN_MOVE_DOWN_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET

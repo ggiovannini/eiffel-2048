@@ -1,12 +1,12 @@
 note
 	description: "[	Test to check if can move to right	]"
-	author: "Felice Marcelo"
-	date: "28/08/2014"
-	revision: "1.0"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 	testing: "type/manual"
 
 class
-	CAN_MOVE_RIGHT_AT_BOARD_2048
+	CAN_MOVE_RIGHT_AT_BOARD_PRISM
 
 inherit
 	EQA_TEST_SET

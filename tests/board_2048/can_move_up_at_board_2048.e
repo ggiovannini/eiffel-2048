@@ -1,11 +1,11 @@
 note
 	description: "Test class for routine can_move_up of the BOARD_2048 class"
-	author: "Matias-Bernal"
-	date: "28/08/2014"
-	revision: "1.2"
+	author: "ggiovannini"
+	date: "October 5, 2014"
+	revision: "0.01"
 
 class
-	CAN_MOVE_UP_AT_BOARD_2048
+	CAN_MOVE_UP_AT_BOARD_PRISM
 
 inherit
 
