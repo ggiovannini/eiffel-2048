@@ -480,7 +480,7 @@ feature {NONE} -- Auxiliary routines
 			end
 
 			if maximum_tile = 64 then
-				message.append ("<font color=#F5D63D><b>'You didn't see anything yet... '<b></font>")
+				message.append ("<font color=#F5D63D><b>'You haven't seen anything yet... '<b></font>")
 			end
 
 			if maximum_tile = 128 then
@@ -496,7 +496,7 @@ feature {NONE} -- Auxiliary routines
 			end
 
 			if maximum_tile = 1024 then
-				message.append ("<font color=#4B5320><b>'C'mon! One more!'<b></font>")
+				message.append ("<font color=#4B5320><b>'C'mon! Just one more!'<b></font>")
 			end
 
 			if maximum_tile = 2048 then
